@@ -8,7 +8,13 @@ const Calendar = () => {
     //grab the data from api
     //itterate over the objects to find the month, compare that to the month we have in 'CalendarData', if it's the same month look at the 'CalendarData[month][indexOfDay +1] == the fetchedData at that day, if it is the same, push the whole data object to 'CalendarData[month][indexOfDay+1].data.push(fetchedDataObject)
 
-
+    for (let key in CalendarData) {
+      for (let event of CalendarInfo.data) {
+        if (event.month == key) {
+          CalendarData[key][event.day].data.push(event);
+        }
+      }
+    }
 
     console.log(CalendarData, 'calendar data that should have event info')
   }, [])
