@@ -1305,7 +1305,7 @@ export const CalendarInfo = {
         {
             id: 4,
             event: 'kick ass',
-            month: '3',
+            month: '2',
             day: '22'
         }
         ,

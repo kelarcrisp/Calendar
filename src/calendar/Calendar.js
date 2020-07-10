@@ -27,7 +27,16 @@ const Calendar = () => {
       </div>
       <div className={classes.DaysContainer}>
         {CalendarData[currentMonth].map((days, index) => {
-          return <div className={classes.CurrentMonthDays} key={index * index * index}>{days.day}</div>
+          return (<div className={classes.CurrentMonthDays} key={index * index * index}>
+            {days.day}
+            <ul style={{margin:0,padding: 0}}>
+          {days.data[0]? days.data.map((event)=> {
+           return <li className={classes.EventTag} key={Math.random()}>{event.event}</li>
+          })
+          
+          : null}
+            </ul>
+            </div>)
         })}
       </div>
     </div>
