@@ -25,18 +25,27 @@ const Calendar = () => {
         <h5>{CalendarData.months[currentMonth]}</h5>
         <button className={classes.RightArrow} onClick={() => setCurrentMonth(latest => latest + 1)}>-></button>
       </div>
+      <div className={classes.DayNames}>
+        <p>Monday</p>
+        <p>Tuesday</p>
+        <p>Wednesday</p>
+        <p>Thursday</p>
+        <p>Friday</p>
+        <p>Saturday</p>
+        <p>Sunday</p>
+      </div>
       <div className={classes.DaysContainer}>
         {CalendarData[currentMonth].map((days, index) => {
           return (<div className={classes.CurrentMonthDays} key={index * index * index}>
             {days.day}
-            <ul style={{margin:0,padding: 0}}>
-          {days.data[0]? days.data.map((event)=> {
-           return <li className={classes.EventTag} key={Math.random()}>{event.event}</li>
-          })
-          
-          : null}
+            <ul style={{ margin: 0, padding: 0 }}>
+              {days.data[0] ? days.data.map((event) => {
+                return <li className={classes.EventTag} key={Math.random()}>{event.event}</li>
+              })
+
+                : null}
             </ul>
-            </div>)
+          </div>)
         })}
       </div>
     </div>

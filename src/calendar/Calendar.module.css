@@ -15,15 +15,28 @@
   border-bottom: 0.5px solid gray;
 
 }
-
+h5{
+  font-size: 3rem;
+}
+.DayNames{
+display: flex;
+margin: 0;
+padding: 0;
+height: 5%;
+margin-left: 18px;
+}
+.DayNames > p{
+width: 14%;
+}
 .DaysContainer{
 display: flex;
 flex-wrap: wrap;
-  height: 85%;
+  height: 80%;
 }
 .CurrentMonthDays{
-width: 11.11%;
+width: 14.28%;
 border: 1px solid black;
+height: 20%;
 }
 
 .EventTag{
@@ -31,4 +44,10 @@ border: 1px solid black;
   margin: 0;
   list-style: none;
   text-align: center;
+  cursor: pointer;
+}
+.EventTag::before{
+  content: '*';
+  color: blue;
+
 }
