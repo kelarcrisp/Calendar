@@ -18,6 +18,20 @@
 h5{
   font-size: 3rem;
 }
+.LeftArrow{
+    border-radius: 50%;
+    border: none;
+    padding: 1.5%;
+}
+.RightArrow{
+    border-radius: 50%;
+    border: none;
+    padding: 1.5%;
+}
+
+.LeftArrow:focus, .RightArrow:focus{
+  outline: none;
+}
 .DayNames{
 display: flex;
 margin: 0;

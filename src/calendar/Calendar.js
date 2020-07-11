@@ -27,9 +27,9 @@ const Calendar = () => {
   return (
     <div className={classes.Container}>
       <div className={classes.Header}>
-        <button className={classes.LeftArrow} onClick={() => setCurrentMonth(latest => latest - 1)}> --</button>
+        <button className={classes.LeftArrow} onClick={() => setCurrentMonth(latest => latest - 1)}>&#8249;</button>
         <h5>{CalendarData.months[currentMonth]}</h5>
-        <button className={classes.RightArrow} onClick={() => setCurrentMonth(latest => latest + 1)}>-></button>
+        <button className={classes.RightArrow} onClick={() => setCurrentMonth(latest => latest + 1)}>&#8250;</button>
       </div>
       <div className={classes.DayNames}>
         <p>Monday</p>

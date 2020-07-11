@@ -14,3 +14,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.previous{
+  color: green;
+}
+.round{
+    border-radius: 50%;
+}
