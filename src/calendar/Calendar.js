@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import classes from "./Calendar.module.css";
 import { CalendarData, CalendarInfo } from '../calendarData/CalendarData';
+import EventDetails from "./EventDetails";
 const Calendar = () => {
   const [currentMonth, setCurrentMonth] = useState(0)
-
+  const [showEventDetails, setShowEventDetails] = useState(false)
+  const [evDetails, setEdetails] = useState({})
   useEffect(() => {
     //grab the data from api
     //itterate over the objects to find the month, compare that to the month we have in 'CalendarData', if it's the same month look at the 'CalendarData[month][indexOfDay +1] == the fetchedData at that day, if it is the same, push the whole data object to 'CalendarData[month][indexOfDay+1].data.push(fetchedDataObject)
@@ -16,8 +18,12 @@ const Calendar = () => {
       }
     }
 
-    console.log(CalendarData, 'calendar data that should have event info')
   }, [])
+  const handleShowEvent = (event) => {
+    setShowEventDetails(true)
+    setEdetails(event)
+  }
+
   return (
     <div className={classes.Container}>
       <div className={classes.Header}>
@@ -40,13 +46,18 @@ const Calendar = () => {
             {days.day}
             <ul style={{ margin: 0, padding: 0 }}>
               {days.data[0] ? days.data.map((event) => {
-                return <li className={classes.EventTag} key={Math.random()}>{event.event}</li>
+                return (<div key={Math.random()}>
+                  <li className={classes.EventTag} onClick={() => handleShowEvent(event)} >
+                    {event.event}
+                  </li>
+                </div>)
               })
 
                 : null}
             </ul>
           </div>)
         })}
+        <div className={classes.EventDetailsContainer}>{showEventDetails && <EventDetails event={evDetails.event} day={evDetails.day} id={evDetails.id} showEventDetails={showEventDetails} setShowEventDetails={setShowEventDetails} />}</div>
       </div>
     </div>
   );

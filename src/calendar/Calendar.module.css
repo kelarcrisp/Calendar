@@ -49,5 +49,8 @@ height: 20%;
 .EventTag::before{
   content: '*';
   color: blue;
+}
 
+.EventDetailsContainer{
+  position: relative
 }

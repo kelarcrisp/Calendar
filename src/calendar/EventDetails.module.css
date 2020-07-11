@@ -1,0 +1,14 @@
+.Container{
+    position: fixed;
+right: 5%;
+top: 50%;
+    z-index:1;
+    padding: 12px;
+    width: 20%;
+    height: 20%;
+    background: lightgoldenrodyellow;
+    
+}
+.HideEventDetails{
+    display: none;
+}
