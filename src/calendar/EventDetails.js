@@ -6,6 +6,7 @@ const EventDetails = ({ event, day, id, showEventDetails, setShowEventDetails })
     useEffect(() => {
         function handleClickOutside(event) {
             if (clickedOutside.current && !clickedOutside.current.contains(event.target)) {
+                console.log(event, 'event in console')
                 setShowEventDetails(false)
             }
         }
