@@ -1,0 +1,70 @@
+.Container {
+  border: 1px solid black;
+  width: 680px;
+  height: 680px;
+  margin-top: 100px;
+  box-sizing: border-box;
+}
+.Header {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 15%;
+  padding: 0 1.25rem;
+  border-bottom: 0.5px solid gray;
+}
+h5 {
+  font-size: 3rem;
+}
+.LeftArrow {
+  border-radius: 50%;
+  border: none;
+  padding: 1.5%;
+}
+.RightArrow {
+  border-radius: 50%;
+  border: none;
+  padding: 1.5%;
+}
+
+.LeftArrow:focus,
+.RightArrow:focus {
+  outline: none;
+}
+.DayNames {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 5%;
+  margin-left: 18px;
+}
+.DayNames > p {
+  width: 14%;
+}
+.DaysContainer {
+  display: flex;
+  flex-wrap: wrap;
+  height: 80%;
+}
+.CurrentMonthDays {
+  width: 14.28%;
+  border: 1px solid black;
+  height: 20%;
+}
+
+.EventTag {
+  padding: 6px 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  cursor: pointer;
+}
+.EventTag::before {
+  content: "*";
+  color: blue;
+}
+
+.EventDetailsContainer {
+  position: relative;
+}

@@ -17,9 +17,9 @@ const Calendar = () => {
   var firstDay = new Date(2019, 0, 1).toString().split(" ")[0];
   console.log(firstDay);
   const holderArray = Array(105).fill([]);
-  holderArray[20] = [{ name: "Event", desc: "event description" }];
-  holderArray[25] = [{ name: "Event", desc: "event description" }];
-  holderArray[29] = [{ name: "Event", desc: "event description" }];
+  holderArray[20] = [{ day: 20, name: "Event", desc: "event description" }];
+  holderArray[25] = [{ day: 25, name: "Event", desc: "event description" }];
+  holderArray[29] = [{ day: 29, name: "Event", desc: "event description" }];
   console.log(holderArray);
   useEffect(() => {
     //grab the data from api
